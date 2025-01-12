@@ -1,0 +1,36 @@
+{%extends '../base/base.html'%}
+{%block content%}
+ <!--ujumbe containers and breadcrumbs-->
+ <div class="app-content-header">
+    <!--begin::Container-->
+    <div class="container-fluid">
+      <!--begin::Row-->
+      <div class="row">
+        <div class="col-sm-6"><h3 class="mb-0">Reports</h3></div>
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-end">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+          </ol>
+        </div>
+      </div>
+      <!--end::Row-->
+    </div>
+    <!--end::Container-->
+  </div>
+  <!--ujumbe containers and breadcrumbs-->
+<div class="app-content">
+    <!--begin::Container-->
+    <div class="container-fluid">
+      <!-- Info boxes -->
+      <div class="row h-100">
+        <div class="col-lg-12  connectedSortable">
+        <div class="card mb-4">
+            <div class="card-header"><h3 class="card-title">Sms Statistics</h3></div>
+            <div class="card-body"><div id="revenue-chart"></div></div>
+          </div>
+        </div>
+        </div>
+    </div>
+
+{%endblock%}

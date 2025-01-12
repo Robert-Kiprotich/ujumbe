@@ -1,0 +1,83 @@
+{%extends '../base/base.html'%}
+{%block content%}
+ <!--ujumbe containers and breadcrumbs-->
+ <div class="app-content-header">
+    <!--begin::Container-->
+    <div class="container-fluid">
+      <!--begin::Row-->
+      <div class="row">
+        <div class="col-sm-6"><h3 class="mb-0">Messages</h3></div>
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-end">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+          </ol>
+        </div>
+      </div>
+      <!--end::Row-->
+    </div>
+    <!--end::Container-->
+  </div>
+  <!--ujumbe containers and breadcrumbs-->
+<div class="app-content">
+    <!--begin::Container-->
+    <div class="container-fluid">
+      <!--begin::Row-->
+      <div class="row">
+        <div class="col-md-12">
+<div class="card mb-4">
+    <div class="card-header">
+      <h3 class="card-title">Sms Info</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body p-0">
+        {%if messages%}
+<table id="example" class="table table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>Sms Text</th>
+            <th>Phone</th>
+            <th>Direction</th>
+            <th>Status</th>
+            <th>Sent</th>
+            <th>Date</th>
+            <th>Cost</th>
+            <th>Response</th>
+            <th>ID</th>
+            <th>Conversations</th>
+        </tr>
+    </thead>
+    {%for message in messages%}
+    <tbody>
+        <tr>
+            <td>{{message.sms_text}}</td>
+            <td>{{message.sms_phone}}</td>
+            <td>{{message.sms_direction}}</td>
+            <td>{{message.sms_status}}</td>
+            <td>{{message.sms_sent_status}}</td>
+            <td>{{message.sms_schedule_date}}</td>
+            <td>{{message.sms_cost}}</td>
+            <td>{{message.sms_response}}</td>
+            <td>{{message.sms_messageid}}</td>
+            <td>{{message.sms_conv}}</td>
+            
+        </tr>
+        
+    </tbody>
+    {%endfor%}
+</table>
+{%endif%}
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+
+    new DataTable('#example');
+
+</script>
+
+{%endblock%}

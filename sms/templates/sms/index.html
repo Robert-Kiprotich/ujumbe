@@ -1,0 +1,213 @@
+{%extends '../base/base.html'%}
+{%block content%}
+ <!--ujumbe containers and breadcrumbs-->
+ <div class="app-content-header">
+  <!--begin::Container-->
+  <div class="container-fluid">
+    <!--begin::Row-->
+    <div class="row">
+      <div class="col-sm-6"><h3 class="mb-0">Dashboard</h3></div>
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-end">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+        </ol>
+      </div>
+    </div>
+    <!--end::Row-->
+  </div>
+  <!--end::Container-->
+</div>
+<!--ujumbe containers and breadcrumbs-->
+    <div class="app-content">
+      <!--begin::Container-->
+      <div class="container-fluid">
+        <!-- Info boxes -->
+         
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box">
+              <span class="info-box-icon text-bg-primary shadow-sm">
+                <i class="bi bi-robot"></i>
+              </span>
+              <div class="info-box-content">
+                <span class="info-box-text">Chatbot Responses</span>
+                <span class="info-box-number">
+                  {{messages|length}}
+                  
+                </span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+         
+          <!-- /.col -->
+          <!-- fix for small devices only -->
+          <!-- <div class="clearfix hidden-md-up"></div> -->
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box">
+              <span class="info-box-icon text-bg-success shadow-sm">
+               
+                <i class="bi bi-send-fill"></i>
+              </span>
+              <div class="info-box-content">
+                <span class="info-box-text">Sent</span>
+                <span class="info-box-number"> {{messages|length}}</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box">
+              <span class="info-box-icon text-bg-warning shadow-sm">
+                <i class="bi bi-chat-text-fill"></i>
+
+              </span>
+              <div class="info-box-content">
+                <span class="info-box-text">Received</span>
+                <span class="info-box-number"> {{messages|length}}</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box">
+              <span class="info-box-icon text-bg-danger shadow-sm">
+                <i class="bi bi-exclamation-triangle-fill"></i>
+              </span>
+              <div class="info-box-content">
+                <span class="info-box-text">Failed</span>
+                <span class="info-box-number"> {{messages|length}}</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+        <!--begin::Row-->
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card mb-4">
+              <div class="card-header">
+                <h5 class="card-title">Monthly Recap Report</h5>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse">
+                    <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
+                    <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
+                  </button>
+                  <div class="btn-group">
+                    <button
+                      type="button"
+                      class="btn btn-tool dropdown-toggle"
+                      data-bs-toggle="dropdown"
+                    >
+                      <i class="bi bi-wrench"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end" role="menu">
+                      <a href="#" class="dropdown-item">Action</a>
+                      <a href="#" class="dropdown-item">Another action</a>
+                      <a href="#" class="dropdown-item"> Something else here </a>
+                      <a class="dropdown-divider"></a>
+                      <a href="#" class="dropdown-item">Separated link</a>
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-tool" data-lte-toggle="card-remove">
+                    <i class="bi bi-x-lg"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <!--begin::Row-->
+                <div class="row">
+                  <div class="col-md-8">
+                    <p class="text-center">
+                      <strong>Messages: 1 Jan, 2025 - 30 Jul, 2025</strong>
+                    </p>
+                    <div id="messaging-chart"></div>
+                  </div>
+                  <!-- /.col -->
+                  <div class="col-md-4">
+                    <p class="text-center"><strong>Statistics</strong></p>
+                    <div class="progress-group">
+                     Chatbot Responses
+                      <span class="float-end"><b>160</b>/200</span>
+                      <div class="progress progress-sm">
+                        <div class="progress-bar text-bg-primary" style="width: 80%"></div>
+                      </div>
+                    </div>
+                    <!-- /.progress-group -->
+                   
+                    <!-- /.progress-group -->
+                    <div class="progress-group">
+                      <span class="progress-text">Sent</span>
+                      <span class="float-end"><b>480</b>/800</span>
+                      <div class="progress progress-sm">
+                        <div class="progress-bar text-bg-success" style="width: 60%"></div>
+                      </div>
+                    </div>
+                    <!-- /.progress-group -->
+                    <div class="progress-group">
+                      Received
+                      <span class="float-end"><b>250</b>/500</span>
+                      <div class="progress progress-sm">
+                        <div class="progress-bar text-bg-warning" style="width: 50%"></div>
+                      </div>
+                    </div>
+                    <div class="progress-group">
+                      Failed
+                      <span class="float-end"><b>310</b>/400</span>
+                      <div class="progress progress-sm">
+                        <div class="progress-bar text-bg-danger" style="width: 75%"></div>
+                      </div>
+                    </div>
+                    <!-- /.progress-group -->
+                  </div>
+                  <!-- /.col -->
+                </div>
+                <!--end::Row-->
+              </div>
+              <!-- ./card-body -->
+             
+                <!--end::Row-->
+              </div>
+              <!-- /.card-footer -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!--end::Row-->
+        <!--begin::Row-->
+        <div class="row">
+          <!-- Start col -->
+          <div class="col-md-8">
+            <!--begin::Row-->
+            <div class="row g-4 mb-4">
+              <div class="col-md-6">
+               
+              </div>
+              <!-- /.col -->
+              <div class="col-md-6">
+                
+             
+              <!-- /.card-footer -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!--end::Row-->
+      </div>
+      <!--end::Container-->
+    </div>
+    <!--end::App Content-->
+
+  {%endblock%}
